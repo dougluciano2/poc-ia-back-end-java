@@ -8,14 +8,14 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Table(name = "tbl_person")
+@Table(name = "tbl_persons")
 @Getter @Setter @Builder
 public class Person extends AbstractEntity {
 
-    @Column(name = "person_name", nullable = false, length = 150)
+    @Column(name = "name", nullable = false, length = 150)
     private String name;
 
-    @Column(name = "person_document", nullable = false, unique = true, length = 18)
+    @Column(name = "document", nullable = false, unique = true, length = 18)
     private String document;
 
     @Enumerated(EnumType.STRING)

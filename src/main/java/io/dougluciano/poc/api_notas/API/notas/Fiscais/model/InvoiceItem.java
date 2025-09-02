@@ -8,7 +8,7 @@ import lombok.Setter;
 
 import java.math.BigDecimal;
 
-@Entity @Table(name = "invoice_items")
+@Entity @Table(name = "tbl_invoice_items")
 @Getter @Setter @Builder
 public class InvoiceItem extends AbstractEntity {
 
@@ -16,11 +16,11 @@ public class InvoiceItem extends AbstractEntity {
     private Integer numSeq;
 
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
-    @Column(name = "invoice_id", nullable = false)
+    @JoinColumn(name = "invoice_id", nullable = false)
     private Invoice invoice;
 
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
-    @Column(name = "product_id", nullable = false)
+    @JoinColumn(name = "product_id", nullable = false)
     private Product product;
 
     @Column(name = "quantity", nullable = false)

@@ -14,7 +14,7 @@ import java.math.BigDecimal;
 public class Product extends AbstractFullEntity {
 
     @Column(name = "brand", nullable = false, length = 150)
-    private String branc;
+    private String brand;
 
     @Column(name = "name", nullable = false, length = 150)
     private String name;
@@ -23,7 +23,7 @@ public class Product extends AbstractFullEntity {
     @Column(name = "category", nullable = false, length = 150)
     private ProductCategory category;
 
-    @Column(name = "price", nullable = false)
-    private BigDecimal price;
+    @Column(name = "list_price", nullable = false)
+    private BigDecimal listPrice;
 
 }

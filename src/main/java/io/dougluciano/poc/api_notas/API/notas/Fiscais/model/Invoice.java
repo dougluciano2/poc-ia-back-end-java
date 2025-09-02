@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity @Table(name = "invoices")
+@Entity @Table(name = "tbl_invoices")
 @Getter @Setter @Builder
 @NoArgsConstructor @AllArgsConstructor
 public class Invoice extends AbstractFullEntity {
@@ -17,21 +17,21 @@ public class Invoice extends AbstractFullEntity {
     @Column(name = "number", nullable = false)
     private String number;
 
-    @Column(name = "serie", nullable = false)
-    private String serie;
+    @Column(name = "series", nullable = false)
+    private String series;
 
-    @Column(name = "emission_date", nullable = false)
-    private LocalDateTime emissionDate;
+    @Column(name = "issue_date", nullable = false)
+    private LocalDateTime issueDate;
 
     @Column(name = "amount_value", nullable = false)
     private BigDecimal amountValue;
 
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
-    @Column(name = "seller_id", nullable = false)
-    private Person seller;
+    @JoinColumn(name = "issuer_id", nullable = false)
+    private Person issuer;
 
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
-    @Column(name = "customer_id", nullable = false)
+    @JoinColumn(name = "customer_id", nullable = false)
     private Person customer;
 
     @OneToMany(mappedBy = "invoice", cascade = CascadeType.ALL, orphanRemoval = true)
