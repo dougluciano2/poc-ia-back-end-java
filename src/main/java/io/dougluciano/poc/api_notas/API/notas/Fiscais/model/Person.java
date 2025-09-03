@@ -3,13 +3,13 @@ package io.dougluciano.poc.api_notas.API.notas.Fiscais.model;
 import io.dougluciano.poc.api_notas.API.notas.Fiscais.model.base.AbstractEntity;
 import io.dougluciano.poc.api_notas.API.notas.Fiscais.model.enums.PersonType;
 import jakarta.persistence.*;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 @Entity
 @Table(name = "tbl_persons")
 @Getter @Setter @Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class Person extends AbstractEntity {
 
     @Column(name = "name", nullable = false, length = 150)

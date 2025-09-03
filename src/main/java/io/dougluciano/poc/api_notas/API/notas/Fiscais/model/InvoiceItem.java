@@ -2,14 +2,13 @@ package io.dougluciano.poc.api_notas.API.notas.Fiscais.model;
 
 import io.dougluciano.poc.api_notas.API.notas.Fiscais.model.base.AbstractEntity;
 import jakarta.persistence.*;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.math.BigDecimal;
 
 @Entity @Table(name = "tbl_invoice_items")
 @Getter @Setter @Builder
+@AllArgsConstructor @NoArgsConstructor
 public class InvoiceItem extends AbstractEntity {
 
     @Column(name = "num_seq", nullable = false)
