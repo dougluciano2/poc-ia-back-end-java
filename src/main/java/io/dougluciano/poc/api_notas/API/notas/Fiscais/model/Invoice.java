@@ -1,6 +1,7 @@
 package io.dougluciano.poc.api_notas.API.notas.Fiscais.model;
 
 import io.dougluciano.poc.api_notas.API.notas.Fiscais.model.base.AbstractFullEntity;
+import io.dougluciano.poc.api_notas.API.notas.Fiscais.model.enums.InvoiceStatus;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -36,5 +37,9 @@ public class Invoice extends AbstractFullEntity {
 
     @OneToMany(mappedBy = "invoice", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<InvoiceItem> items = new ArrayList<>();
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "status", nullable = false)
+    private InvoiceStatus status;
 
 }
