@@ -19,7 +19,7 @@ Este back-end desempenha o papel de **fonte de dados (data source)** para a auto
 
 ## 🚀 Tecnologias Utilizadas
 
--   **Java 21**: Versão mais recente da linguagem Java.
+-   **Java 21**: Versão mais recente da linguagem Java LTS até o desenvolvimento do projeto.
 -   **Spring Boot 3.x**: Framework para criação da aplicação.
 -   **PostgreSQL**: Sistema de gerenciamento de banco de dados relacional.
 -   **Flyway**: Ferramenta para versionamento e migração do schema do banco de dados.
